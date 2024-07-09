@@ -12,7 +12,7 @@
     <div class="container">
         <div class="login-form">
             <h2>Login</h2>
-            <form action="<?php echo base_url('login/validate') ?>" method="post">
+            <form action="<?php echo base_url('login/checkLogin') ?>" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
 

@@ -2,15 +2,23 @@
 
 use CodeIgniter\Controller;
 use App\Models\UserModel;
+use CodeIgniter\Session\SessionInterface;
 
 class Login extends Controller
 {
+    private $session;
+
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+
     public function index()
     {
         return view('login');
     }
 
-    public function validate()
+    public function checkLogin()
     {
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
